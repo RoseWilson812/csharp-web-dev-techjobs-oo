@@ -9,8 +9,8 @@ namespace TechJobsOO
 
         public Employer()
         {
-            Id = nextId;
-            nextId++;
+            Id = nextId;  // will use 1 for the first Id
+            nextId++;     // then add 1, so nextId will use 2
         }
 
         public Employer(string value) : this()
@@ -18,7 +18,7 @@ namespace TechJobsOO
             Value = value;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object obj)  // makes sure the object is == current object
         {
             return obj is Employer employer &&
                    Id == employer.Id;
