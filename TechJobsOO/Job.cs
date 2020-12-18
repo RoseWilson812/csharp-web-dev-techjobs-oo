@@ -40,7 +40,81 @@ namespace TechJobsOO
         {
             return HashCode.Combine(Id);
         }
+        public override string ToString()
+        {
+            Console.WriteLine("Job.ToStirng");
 
-       
+
+            string prtName = "";
+            if (string.IsNullOrEmpty(this.Name))
+            {
+                this.Name = "Data not available";
+                prtName = "Data not available";
+            }
+
+            string prtEmployerName = "";
+            if (this.EmployerName is null)
+            {
+                prtEmployerName = "Data not available";
+            }
+            else if (string.IsNullOrEmpty(this.EmployerName.Value))
+            {
+                this.EmployerName.Value = "Data not available";
+            }
+            //else
+            //{
+
+                //prtEmployerName = this.EmployerName.ToString();
+            //}
+
+            string prtLocation = "";
+            if (this.EmployerLocation is null)
+            {
+                prtLocation = "Data not available";
+            }
+            else if (string.IsNullOrEmpty(this.EmployerLocation.Value))
+            {
+                this.EmployerLocation.Value = "Data not available";
+            }
+           
+
+            string prtJobType = "";
+            if (this.JobType is null)
+            {
+                prtJobType = "Data not available";
+            }
+            else if (string.IsNullOrEmpty(this.JobType.Value))
+            {
+                this.JobType.Value = "Data not available";
+            }
+           
+
+            string prtCoreCompetency = "";
+            if (this.JobCoreCompetency is null)
+            {
+                prtCoreCompetency = "Data not available";
+            }
+            else if (string.IsNullOrEmpty(this.JobCoreCompetency.Value))
+            {
+                this.JobCoreCompetency.Value = "Data not available";
+            }
+            
+
+            Console.WriteLine("prtempname=" + prtEmployerName);
+            if (prtName == "Data not available" &&
+                 prtEmployerName == "Data not available" &&
+                 prtLocation == "Data not available" &&
+                 prtJobType == "Data not available" &&
+                 prtCoreCompetency == "Data not available")
+            {
+                return "OOPS! This job does not seem to exist.";
+            }
+            else
+            {
+                //return "\nID: " + this.Id + "\nName: " + prtName + "\nEmployer: " + prtEmployerName + "\nLocation: " + prtLocation + "\nPosition Type: " + prtJobType + "\nCore Competency: " + prtCoreCompetency + "\n";
+                return "\nID: " + this.Id + "\nName: " + this.Name + "\nEmployer: " + this.EmployerName + "\nLocation: " + this.EmployerLocation + "\nPosition Type: " + this.JobType + "\nCore Competency: " + this.JobCoreCompetency + "\n";
+            }
+        }
+
     }
 }

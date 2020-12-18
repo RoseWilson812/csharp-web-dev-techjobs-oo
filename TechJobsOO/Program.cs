@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TechJobsOO
 {
@@ -13,9 +15,23 @@ namespace TechJobsOO
             Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             Console.WriteLine(job3.Id + " " + job3.EmployerName);
             Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            Job job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job job5 = new Job("Product tester", new Employer(), new Location(), new PositionType(), new CoreCompetency());
+            Job job6 = new Job("", new Employer(), new Location(), new PositionType(), new CoreCompetency());
             Console.WriteLine(job4.Id);
-            Console.WriteLine(job5.Id);
+            Console.WriteLine(job6.Id);
+
+            Console.WriteLine(job4.ToString());
+            string result = job4.ToString();
+            List<string> resultList = result.Split("\n").ToList();
+
+            string id = resultList[1].Substring(0, 3);
+            string name = resultList[2].Substring(0, 5);
+            string employer = resultList[3].Substring(0, 9);
+            string location = resultList[4].Substring(0, 9);
+            string position = resultList[5].Substring(0, 9);
+            string coreCompetency = resultList[6].Substring(0, 16);
+
+            Console.WriteLine("");
             /*
             Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
