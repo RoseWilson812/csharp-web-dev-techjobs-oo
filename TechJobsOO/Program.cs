@@ -22,14 +22,14 @@ namespace TechJobsOO
 
             Console.WriteLine(job4.ToString());
             string result = job4.ToString();
-            List<string> resultList = result.Split("\n").ToList();
+            //List<string> resultList = result.Split("\n").ToList();
 
-            string id = resultList[1].Substring(0, 3);
-            string name = resultList[2].Substring(0, 5);
-            string employer = resultList[3].Substring(0, 9);
-            string location = resultList[4].Substring(0, 9);
-            string position = resultList[5].Substring(0, 9);
-            string coreCompetency = resultList[6].Substring(0, 16);
+            //string id = resultList[1].Substring(0, 3);
+            //string name = resultList[2].Substring(0, 5);
+            //string employer = resultList[3].Substring(0, 9);
+            //string location = resultList[4].Substring(0, 9);
+            //string position = resultList[5].Substring(0, 9);
+            //string coreCompetency = resultList[6].Substring(0, 16);
 
             Console.WriteLine("");
             /*
