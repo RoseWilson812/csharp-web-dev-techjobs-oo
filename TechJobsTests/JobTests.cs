@@ -83,14 +83,18 @@ namespace TechJobsTests
         public void TestAllFieldsEmptyExceptId()
         {
 
-            Job job1 = new Job("", new Employer(""), new Location(), new PositionType(), new CoreCompetency());
-            job1.ToString();
-            Assert.AreNotEqual(0, job1.Id);
-            Assert.AreEqual("Data not available", job1.Name);
-            Assert.AreEqual("Data not available", job1.EmployerName.Value);
-            Assert.AreEqual("Data not available", job1.EmployerLocation.Value);
-            Assert.AreEqual("Data not available", job1.JobType.Value);
-            Assert.AreEqual("Data not available", job1.JobCoreCompetency.Value);
+            //Job job1 = new Job("", new Employer(""), new Location(), new PositionType(), new CoreCompetency());
+            Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            //job3.ToString();
+            //Assert.AreNotEqual(0, job1.Id);
+            job3.EmployerName.Value = "";
+            job3.JobType.Value = "";
+            job3.ToString();
+            //Assert.AreEqual("Data not available", job1.Name);
+            Assert.AreEqual("Data not available", job3.EmployerName.Value);
+            //Assert.AreEqual("Data not available", job1.EmployerLocation.Value);
+            Assert.AreEqual("Data not available", job3.JobType.Value);
+            //Assert.AreEqual("Data not available", job1.JobCoreCompetency.Value);
 
 
         }

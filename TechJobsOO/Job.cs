@@ -1,10 +1,10 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class Job : JobField
+    public class Job 
     {
-        //public int Id { get; }
-        //private static int nextId = 1;
+        public int Id { get; }
+        private static int nextId = 1;
 
         public string Name { get; set; }
         public Employer EmployerName { get; set; }
@@ -13,13 +13,14 @@ namespace TechJobsOO
         public CoreCompetency JobCoreCompetency { get; set; }
 
         // TODO: Add the two necessary constructors.
-        public Job() : base()
+        public Job()    // : base()
         {
-            //Id = nextId;
-            //nextId++;
+            Id = nextId;
+            nextId++;
         }
-        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
+        public Job( string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
+            
             Name = name;
             EmployerName = employerName;
             EmployerLocation = employerLocation;
@@ -28,18 +29,7 @@ namespace TechJobsOO
 
         
         }
-
-        public Job(string value) : base(value)
-        {
-            //Value = value;
-        }
-
-        // TODO: Generate Equals() and GetHashCode() methods.
-        public override bool Equals(object obj)  // makes sure the object is == current object
-        {
-            return obj is Job  &&
-                   Id == this.Id;
-        }
+         
         /* rw
         public override int GetHashCode()
         {
@@ -47,9 +37,7 @@ namespace TechJobsOO
         } rw */
         public override string ToString()
         {
-            Console.WriteLine("Job.ToStirng");
-
-
+            
             string prtName = "";
             if (string.IsNullOrEmpty(this.Name))
             {
@@ -66,11 +54,7 @@ namespace TechJobsOO
             {
                 this.EmployerName.Value = "Data not available";
             }
-            //else
-            //{
-
-                //prtEmployerName = this.EmployerName.ToString();
-            //}
+            
 
             string prtLocation = "";
             if (this.EmployerLocation is null)
@@ -103,9 +87,7 @@ namespace TechJobsOO
             {
                 this.JobCoreCompetency.Value = "Data not available";
             }
-            
-
-            Console.WriteLine("prtempname=" + prtEmployerName);
+                
             if (prtName == "Data not available" &&
                  prtEmployerName == "Data not available" &&
                  prtLocation == "Data not available" &&
