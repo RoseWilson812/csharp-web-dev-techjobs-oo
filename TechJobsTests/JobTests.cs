@@ -30,7 +30,7 @@ namespace TechJobsTests
             Assert.AreEqual("Quality control", job1.JobType.Value);
             Assert.AreEqual("Persistence", job1.JobCoreCompetency.Value);
         }
-        [TestMethod]
+        [TestMethod] /// Fix
         public void TestJobForEquality()
         {
 
@@ -79,22 +79,17 @@ namespace TechJobsTests
 
         }
         //
-        [TestMethod]
+        [TestMethod] 
         public void TestAllFieldsEmptyExceptId()
         {
-
-            //Job job1 = new Job("", new Employer(""), new Location(), new PositionType(), new CoreCompetency());
-            Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            //job3.ToString();
-            //Assert.AreNotEqual(0, job1.Id);
-            job3.EmployerName.Value = "";
-            job3.JobType.Value = "";
-            job3.ToString();
-            //Assert.AreEqual("Data not available", job1.Name);
-            Assert.AreEqual("Data not available", job3.EmployerName.Value);
-            //Assert.AreEqual("Data not available", job1.EmployerLocation.Value);
-            Assert.AreEqual("Data not available", job3.JobType.Value);
-            //Assert.AreEqual("Data not available", job1.JobCoreCompetency.Value);
+            Job job3 = new Job();
+           
+            Assert.IsNotNull(job3.Id);
+            Assert.IsNull(job3.Name);
+            Assert.IsNull(job3.EmployerName);
+            Assert.IsNull(job3.EmployerLocation);
+            Assert.IsNull(job3.JobType);
+            Assert.IsNull(job3.JobCoreCompetency);
 
 
         }
@@ -104,7 +99,7 @@ namespace TechJobsTests
 
             Job job1 = new Job();
             string result = job1.ToString();
-            
+            Assert.IsNotNull(job1.Id);
             Assert.AreEqual("OOPS! This job does not seem to exist.", result);
            
 
